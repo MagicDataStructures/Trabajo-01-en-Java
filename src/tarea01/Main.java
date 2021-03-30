@@ -26,9 +26,8 @@ public class Main {
         int W = 1;
         Vector <String> B = new Vector <String>();
         Vector <String> N = new Vector <String>();
-        System.out.println("Ingresar denominación de fichas en mayúscula: ");
         String[] denominacion = {"P" ,"P", "P", "P", "P", "P", "P", "P", "N", "N", "B", "B", "R", "R", "Q", "K"};
-        System.out.println("Esto es lo que se debe ingresar: P P P P P P P P N N B B R R Q K");
+        System.out.println("Estas son las denominaciones: P P P P P P P P N N B B R R Q K");
         for(int i = 0 ; i < 16 ; i++){
             String c = denominacion[i];
             B.add(c);
