@@ -27,22 +27,25 @@ public class Main {
         Vector <String> B = new Vector <String>();
         Vector <String> N = new Vector <String>();
         System.out.println("Ingresar denominación de fichas en mayúscula: ");
+        String[] denominacion = {"P" ,"P", "P", "P", "P", "P", "P", "P", "N", "N", "B", "B", "R", "R", "Q", "K"};
         System.out.println("Esto es lo que se debe ingresar: P P P P P P P P N N B B R R Q K");
         for(int i = 0 ; i < 16 ; i++){
-            String c = entrada.next();
+            String c = denominacion[i];
             B.add(c);
             N.add(c);
         }
         Vector <String> b = new Vector <String>();
         Vector <String> n = new Vector <String>();
-        System.out.println("Ingresar fichas blancas :  Pa2 Pb2 Pc2 Pd2 Pe2 Pf2 Pg2 Ph2 Nb1 Ng1 Bc1 Bf1 Ra1 Rh1 Qd1 Ke1 ");
+        String[] fiblanca = {"Pa2" ,"Pb2", "Pc2", "Pd2", "Pe2", "Pf2" ,"Pg2", "Ph2" ,"Nb1" ,"Ng1", "Bc1" ,"Bf1", "Ra1", "Rh1", "Qd1", "Ke1"};
+        String[] finegra = {"Pa7" ,"Pb7" ,"Pc7", "Pd7" ,"Pe7" ,"Pf7", "Pg7", "Ph7", "Nb8", "Ng8" ,"Bc8", "Bf8", "Ra8", "Rh8" ,"Qe8" ,"Kd8"};
+        System.out.println("Estas son las fichas blancas :  Pa2 Pb2 Pc2 Pd2 Pe2 Pf2 Pg2 Ph2 Nb1 Ng1 Bc1 Bf1 Ra1 Rh1 Qd1 Ke1 ");
         for(int i = 0; i < 16 ; i++){
-            String c = entrada.next();
+            String c = fiblanca[i];
             b.add(c);
         }
-        System.out.println("Ingresar fichas negras :  Pa7 Pb7 Pc7 Pd7 Pe7 Pf7 Pg7 Ph7 Nb8 Ng8 Bc8 Bf8 Ra8 Rh8 Qe8 Kd8 ");
+        System.out.println("Estas son las fichas negras :  Pa7 Pb7 Pc7 Pd7 Pe7 Pf7 Pg7 Ph7 Nb8 Ng8 Bc8 Bf8 Ra8 Rh8 Qe8 Kd8 ");
         for(int i = 0; i < 16 ; i++){
-            String c = entrada.next();
+            String c = finegra[i];
             n.add(c);
         }
         
@@ -50,9 +53,10 @@ public class Main {
         Vector <String> HistB = new Vector<String>();
         Vector <String> HistN = new Vector<String>();
         Vector <String> Rangos = new Vector<String>();
-        System.out.print("Sé que es muy tedioso pero copie y pegue lo siguiente para el valor de los rangos.... : a1 a2 a3 a4 a5 a6 a7 a8 b1 b2 b3 b4 b5 b6 b7 b8 c1 c2 c3 c4 c5 c6 c7 c8 d1 d2 d3 d4 d5 d6 d7 d8 e1 e2 e3 e4 e5 e6 e7 e8 f1 f2 f3 f4 f5 f6 f7 f8 g1 g2 g3 g4 g5 g6 g7 g8 h1 h2 h3 h4 h5 h6 h7 h8");
+        String[] ran ={"a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8", "b1", "b2", "b3", "b4", "b5", "b6", "b7", "b8", "c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8", "e1", "e2", "e3", "e4", "e5", "e6", "e7", "e8", "f1", "f2", "f3", "f4", "f5", "f6" ,"f7", "f8", "g1", "g2", "g3", "g4" ,"g5" ,"g6", "g7", "g8" ,"h1", "h2", "h3" ,"h4", "h5", "h6" ,"h7" ,"h8"};
+        System.out.print("Estos son los rangos: a1 a2 a3 a4 a5 a6 a7 a8 b1 b2 b3 b4 b5 b6 b7 b8 c1 c2 c3 c4 c5 c6 c7 c8 d1 d2 d3 d4 d5 d6 d7 d8 e1 e2 e3 e4 e5 e6 e7 e8 f1 f2 f3 f4 f5 f6 f7 f8 g1 g2 g3 g4 g5 g6 g7 g8 h1 h2 h3 h4 h5 h6 h7 h8");
         for(int i = 0; i < 64 ; i++){
-            String c = entrada.next();
+            String c = ran[i];
             Rangos.add(c);
         }
         
@@ -205,8 +209,8 @@ public class Main {
             
             /*Eliminación de ronda */
             System.out.println("Desea Elimiar esta ronda Si o No");
-            int EL = entrada.nextInt();
-            if(EL == 1){
+            String EL = entrada.next();
+            if(EL.equals("Si") || EL.equals("si") || EL.equals("SI")){
                 b.set(IDblancaInicial,blancaInicial);
                 N.add(Nremove);
                 n.add(repuestoN);
