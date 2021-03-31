@@ -84,7 +84,7 @@ public class Main {
             String blancaInicial = blancaD+blancaP;
             int z = b.indexOf(blancaInicial);
             while(z == -1){
-                System.out.println("No hay ninguna ficha blanca en esta posición, use alguna de las siguientes para la denominación: " + blancaD);
+                System.out.println("No hay ninguna ficha blanca en esta posición, use alguna de las siguientes posiciones para la denominación: " + blancaD);
                 int tama = b.size();
                 for(int i = 0; i < tama ;i++){
                     System.out.print(b.get(i)+"  ");
@@ -94,7 +94,7 @@ public class Main {
                 z = b.indexOf(blancaInicial);
             }
             int IDblancaInicial = z;
-            System.out.println("Ahora ingrese la posición(de a1 hasta h8) a la cual desea mover la ficha blanca:  "+blancaInicial);
+            System.out.println("Ahora ingrese la posición(de a-1 hasta h-8) a la cual desea mover la ficha blanca: "+blancaInicial);
             String blancaPF = entrada.next();
             int m = Rangos.indexOf(blancaPF);
             while(m == -1){
@@ -120,7 +120,7 @@ public class Main {
                 }
             }
             if(xx == 1){
-                System.out.println("la ficha blanca   :"+blancaInicial+"  se ha movido a la posición "+blancaPF+" Y se ha comido la ficha negra  "+nComida);
+                System.out.println("la ficha blanca :"+blancaInicial+" se ha movido a la posición "+blancaPF+" Y se ha comido la ficha negra: "+nComida);
             }
             if(nComida.equals("")){
                 
@@ -155,7 +155,7 @@ public class Main {
             String negraInicial = negraD+negraP;
             int zN = n.indexOf(negraInicial);
             while(zN == -1){
-                System.out.println("No hay ninguna ficha negra en esta posición, use alguna de las siguientes para la denominación: " + negraD);
+                System.out.println("No hay ninguna ficha negra en esta posición, use alguna de las siguientes posiciones para la denominación: " + negraD);
                 int tama = n.size();
                 for(int i = 0; i < tama ;i++){
                     System.out.print(n.get(i)+"  ");
@@ -165,7 +165,7 @@ public class Main {
                 zN = n.indexOf(negraInicial);
             }
             int IDnegraInicial = zN;
-            System.out.println("Ahora ingrese la posición(de a1 hasta h8) a la cual desea mover la ficha negra:  "+negraInicial);
+            System.out.println("Ahora ingrese la posición(de a-1 hasta h-8) a la cual desea mover la ficha negra: "+negraInicial);
             String negraPF = entrada.next();
             int mm = Rangos.indexOf(negraPF);
             while(mm == -1){
@@ -191,7 +191,7 @@ public class Main {
                 }
             }
             if(xxx == 1){
-                System.out.println("la ficha negra   :"+negraInicial+"  se ha movido a la posición "+negraPF+" Y se ha comido la ficha blanca  "+bComida);
+                System.out.println("la ficha negra :"+negraInicial+" se ha movido a la posición "+negraPF+" Y se ha comido la ficha blanca: "+bComida);
             }
             if(bComida.equals("")){
                 
@@ -207,7 +207,7 @@ public class Main {
             System.out.println(Arrays.asList(B));
             
             /*Eliminación de ronda */
-            System.out.println("Desea Elimiar esta ronda Si o No");
+            System.out.println("Desea Elimiar esta ronda, debe poner (si) o (no) sin los parentesis " );
             String EL = entrada.next();
             if(EL.equals("Si") || EL.equals("si") || EL.equals("SI")){
                 b.set(IDblancaInicial,blancaInicial);
@@ -228,7 +228,7 @@ public class Main {
              
            
             /* Ver Lista de jugadas*/
-            System.out.println("Desea ver el hisorial de fichas movidas ?, Poner Si o No");
+            System.out.println("Desea ver el hisorial de fichas movidas ?,debe poner (si) o (no) sin los parentesis  ");
             String pregunta = entrada.next();
             if(pregunta.equals("si") || pregunta.equals("Si") || pregunta.equals("SI")){
                 System.out.println("Las fichas Blancas movidas son :  " + Arrays.asList(HistB) );
@@ -236,7 +236,7 @@ public class Main {
             }
             
             /* Ver fichas capturadas */
-            System.out.println(" Desea ver las fichas capturadas por Color ?, Poner Si o No");
+            System.out.println(" Desea ver las fichas capturadas por Color ?, debe poner (si) o (no) sin los parentesis  ");
             String pregunta1 = entrada.next();
            if(pregunta1.equals("si") || pregunta1.equals("Si") || pregunta1.equals("SI")){
                Collections.sort(Bfuera);
@@ -246,7 +246,7 @@ public class Main {
             }
            
            /* Aqui para consultar cualquier ronda */
-           System.out.print("Desea consultar alguna ronda ?, poner Si o No ");
+           System.out.print("Desea consultar alguna ronda ?, debe poner (si) o (no) sin los parentesis  ");
            String pregunta2 = entrada.next();
            if(pregunta2.equals("si") || pregunta2.equals("Si") || pregunta2.equals("SI")){
                System.out.println("Que ronda quiere consultar ( Número enteros por favor) ");
@@ -264,7 +264,7 @@ public class Main {
                    System.out.println("Esa ronda no existe");
                }
            }
-            System.out.println("Desea editar ésta ronda Si o No ? deberá volver a ingresar los movimientos de las fichas blancas y negras, además de darle No a la opcion finalizar.");
+            System.out.println("Desea editar ésta ronda ?, debe poner (si) o (no) sin los parentesis, deberá volver a ingresar los movimientos de las fichas blancas y negras, además de darle No a la opcion finalizar.  ");
             String desicion= entrada.next();
             if(desicion.equals("Si") || desicion.equals("SI") || desicion.equals("si")){
                 b.set(IDblancaInicial,blancaInicial);
@@ -286,7 +286,7 @@ public class Main {
            }           
 
            
-            System.out.println("Finalizamos ? , ponga (Si) para finalizar");
+            System.out.println("Finalizamos ? , ponga (Si) para finalizar  ");
             String si = entrada.next();
             if(si.equals("si") || si.equals("Si") || si.equals("SI")){
                 return ;
